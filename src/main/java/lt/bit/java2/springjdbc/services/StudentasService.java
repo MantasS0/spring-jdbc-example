@@ -17,11 +17,41 @@ public class StudentasService {
     @Autowired
     private StudentasRowMapper studentasRowMapper;
 
-    public Studentas getStudentasById(int id) {
-        return jdbcTemplate.queryForObject("SELECT * FROM studentai WHERE id = ?", studentasRowMapper, id);
+    public List<Studentas> getStudentasById(int id) {
+
+        return jdbcTemplate.query("select studentai.id id," +
+                " vardas," +
+                " pavarde," +
+                " el_pastas," +
+                " p.id p_id," +
+                " studentas_id," +
+                " p.data data," +
+                " pazymys" +
+                " from studentai" +
+                " left outer join pazymiai p on studentai.id = p.studentas_id" +
+                " where studentai.id = ?" +
+                " order by studentai.id",
+                studentasRowMapper,
+                id);
     }
 
-    public List<Studentas> getAllStudentas(){
+    public List<Studentas> getAllStudentas() {
         return jdbcTemplate.query("SELECT * FROM studentai", studentasRowMapper);
     }
+
+    public List<Studentas> uzkrautiVisusStudentus() {
+        return jdbcTemplate.query("select studentai.id id," +
+                " vardas," +
+                " pavarde," +
+                " el_pastas," +
+                " p.id p_id," +
+                " studentas_id," +
+                " p.data data," +
+                " pazymys" +
+                " from studentai" +
+                " left outer join pazymiai p on studentai.id = p.studentas_id" +
+                " order by studentai.id",
+                studentasRowMapper);
+    }
+
 }

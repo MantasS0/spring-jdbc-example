@@ -53,4 +53,21 @@ public class Studentas {
     public void setPazymiai(List<Pazymys> pazymiai) {
         this.pazymiai = pazymiai;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Studentas s1 = (Studentas) obj;
+        return this.id == s1.getId();
+    }
+
+    @Override
+    public String toString() {
+        return "Studentas{" +
+                "id=" + id +
+                ", vardas='" + vardas + '\'' +
+                ", pavarde='" + pavarde + '\'' +
+                ", elPastas='" + elPastas + '\'' +
+                ", pazymiai=" + pazymiai +
+                '}';
+    }
 }

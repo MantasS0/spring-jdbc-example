@@ -7,7 +7,7 @@ CREATE TABLE `studentai` (
   `el_pastas` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `pazymiai` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -18,7 +18,7 @@ CREATE TABLE `pazymiai` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `studentas_id_idx` (`studentas_id`),
   CONSTRAINT `studentas_id` FOREIGN KEY (`studentas_id`) REFERENCES `studentai` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO studentai (`vardas`, `pavarde`, `el_pastas`) VALUES ('Gediminas', 'Jonaitis', 'g.jonaitis@gmail.com');
 INSERT INTO studentai (`vardas`, `pavarde`, `el_pastas`) VALUES ('Jonas', 'Petraitis', 'j.petraitis@gmail.com');

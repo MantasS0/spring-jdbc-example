@@ -6,11 +6,9 @@ import lt.bit.java2.springjdbc.entities.Studentas;
 import lt.bit.java2.springjdbc.services.StudentasService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -24,14 +22,14 @@ public class StudentasController {
         this.studentasService = studentasService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Studentas> getStudentas(@PathVariable int id){
-        Studentas studentas = studentasService.getStudentasById(id);
-        if (studentas == null){
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(studentas);
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Studentas> getStudentas(@PathVariable int id){
+//        Studentas studentas = studentasService.getStudentasById(id);
+//        if (studentas == null){
+//            return ResponseEntity.notFound().build();
+//        }
+//        return ResponseEntity.ok(studentas);
+//    }
 
     @GetMapping
     public ResponseEntity<List<Studentas>> getAllStudentai(){
@@ -46,6 +44,7 @@ public class StudentasController {
 //        return studentai.isPresent() ? ResponseEntity.ok(studentai.get()) : ResponseEntity.notFound().build();
     }
 
+/*
     @GetMapping
     public ResponseEntity<Double> getAllStudentAverageGrade(){
         List<Studentas> studentai = studentasService.getAllStudentas();
@@ -67,5 +66,6 @@ public class StudentasController {
 
         return null;
     }
+*/
 
 }

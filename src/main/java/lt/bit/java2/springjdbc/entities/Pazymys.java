@@ -43,4 +43,14 @@ public class Pazymys {
     public void setPazymys(Integer pazymys) {
         this.pazymys = pazymys;
     }
+
+    @Override
+    public String toString() {
+        return "Pazymys{" +
+                "id=" + id +
+                ", studentasId=" + studentasId +
+                ", data=" + data +
+                ", pazymys=" + pazymys +
+                '}';
+    }
 }
